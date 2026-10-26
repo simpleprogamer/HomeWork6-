@@ -9,10 +9,11 @@ public class PublishingHouse
 
 public class Book
 {
-    [JsonIgnore]
     public int PublishingHouseId { get; set; }
     [JsonPropertyName("Name")]
     public string Title { get; set; }
+    [JsonPropertyName("Title")]
+    public string TitleFromFile { set { Title = value; } }
     public PublishingHouse PublishingHouse { get; set; }
 }
 
